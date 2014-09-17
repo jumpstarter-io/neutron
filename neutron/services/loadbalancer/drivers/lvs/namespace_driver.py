@@ -36,7 +36,6 @@ from neutron.openstack.common import log as logging
 from neutron.plugins.common import constants
 from neutron.services.loadbalancer.agent import agent_device_driver
 from neutron.services.loadbalancer import constants as lb_const
-import ipvsadm
 
 LOG = logging.getLogger(__name__)
 NS_PREFIX = 'qlbaas-'
