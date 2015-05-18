@@ -1,0 +1,11 @@
+[Unit]
+Description=Neutron l3 agent
+
+[Service]
+ExecStart=/usr/bin/neutron-l3-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/l3_agent.ini
+User=root
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Neutron server
+
+[Service]
+ExecStart=/usr/bin/neutron-server --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugin.ini
+User=neutron
+RestartSec=3
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
