@@ -1,5 +1,6 @@
 [Unit]
 Description=Neutron DHCP agent
+After=neutron-plugin-openvswitch-agent.service
 
 [Service]
 ExecStart=/usr/bin/neutron-dhcp-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/dhcp_agent.ini
