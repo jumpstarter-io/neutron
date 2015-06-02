@@ -1,5 +1,6 @@
 [Unit]
 Description=Neutron l3 agent
+After=neutron-plugin-openvswitch-agent.service
 
 [Service]
 ExecStart=/usr/bin/neutron-l3-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/l3_agent.ini
