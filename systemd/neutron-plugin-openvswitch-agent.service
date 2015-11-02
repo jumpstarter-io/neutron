@@ -3,7 +3,9 @@ Description=Neutron openvswitch plugin agent
 After=ovs-vswitchd.service
 
 [Service]
-ExecStartPre=/usr/bin/netctl start br-ex
+ExecStartPre=/usr/bin/sysctl net.ipv4.conf.all.rp_filter=0
+ExecStartPre=/usr/bin/sysctl net.ipv4.conf.default.rp_filter=0
+#ExecStartPre=/usr/bin/netctl start br-ex
 ExecStartPre=/usr/bin/ethrool -K gro off gso off tso off
 ExecStart=/usr/bin/neutron-openvswitch-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugin.ini
 User=root
