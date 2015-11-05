@@ -6,10 +6,6 @@ After=neutron-plugin-openvswitch-agent.service
 ExecStartPre=/usr/bin/sysctl net.ipv4.ip_forward=1
 ExecStartPre=/usr/bin/sysctl net.ipv4.conf.default.rp_filter=0
 ExecStartPre=/usr/bin/sysctl net.ipv4.conf.all.rp_filter=0
-ExecStartPre=/usr/bin/sysctl net.ipv6.conf.all.accept_ra=0
-ExecStartPre=/usr/bin/sysctl net.ipv6.conf.default.accept_ra=0
-ExecStartPre=/usr/bin/sysctl net.ipv6.conf.all.disable_ipv6=1
-ExecStartPre=/usr/bin/sysctl net.ipv6.conf.default.disable_ipv6=1
 ExecStart=/usr/bin/neutron-l3-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/l3_agent.ini
 User=root
 Restart=always
